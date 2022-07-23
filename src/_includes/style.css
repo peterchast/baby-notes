@@ -28,7 +28,7 @@ body {
 header,
 main,
 footer {
-  max-width: 600px;
+  max-width: 75ch;
   margin: 0 auto;
   padding: 3rem 2rem;
 }
@@ -62,4 +62,32 @@ a:visited {
 a:hover,
 a:focus {
   background-color:var(--flash);
+}
+
+.diary-entry {
+  display: flex;
+  flex-direction: column;
+}
+
+.entry-date {
+  font-family: Georgia, sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.entry-description {
+  font-size: 1.35rem;
+}
+
+.entry-photos {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.entry-photos img {
+  width: 150px;
+  height: 150px;
+  border-radius: 5px;
+  object-fit: cover;
 }

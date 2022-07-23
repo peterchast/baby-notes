@@ -4,8 +4,8 @@ const fetch = require('node-fetch');
 // With public fallbacks for happier onboarding
 require('dotenv').config();
 const {
-  TRELLO_BOARD_URL='https://trello.com/b/Zzc0USwZ/hellotrello',
-  TRELLO_LIST_ID='5e98325d6d6bd120f2b7395f',
+  TRELLO_BOARD_URL='https://trello.com/b/8RFaJbov/baby-notes',
+  TRELLO_LIST_ID='62d9f4f38acfea715443f1b2',
   BRANCH } = process.env;
 
 
@@ -24,20 +24,18 @@ module.exports = () => {
 
       // only include cards labelled with "live" or with
       // the name of the branch we are in
-      let contextCards = contentCards.filter(card => {
-        return card.labels.filter(label => (
-          label.name.toLowerCase() == 'live' ||
-          label.name.toLowerCase() == BRANCH
-        )).length;
-      });
+      let contextCards = contentCards;
+    
 
       // If a card has an attachment, add it as an image in the descriotion markdown
+      /*
       contextCards.forEach(card => {
         if(card.attachments.length) {
           card.name = "";
           card.desc = card.desc + `\n![${card.name}](${card.attachments[0].url} '${card.name}')`;
         }
       })
+      */
 
       // return our data
       return contextCards;
