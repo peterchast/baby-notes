@@ -3,24 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>👋 HelloTrello</title>
+  <link rel="icon" href="https://emojicdn.elk.sh/👶" />
+  <title>ZJR | Welcome to the world!</title>
   {% set css %}
-    {% include "style.css" %}
+    {% include "assets/css/style.css" %}
   {% endset %}
   <style>
     {{ css | cssmin | safe }}
   </style>
+  {% set js %}
+    {% include "assets/js/countup.js" %}
+  {% endset %}
+  <script type="module">{{ js | jsmin | safe }}</script>
 </head>
 <body>
   <main>
+    <article class="baby-age">
+      <div class="wrapper">
+          <div id="counter"></div>
+            <p>...since Zora Jack Rivard was born.</p>
+        </div>
+    </article>
+    <article class="baby-diary">
+    <div class="wrapper">
     {% for card in trello %}
     <section class="diary-entry">
+    <div class="entry-text">
     <span class="entry-date">{{ card.due | postDate }}</span> 
-    <span class="entry-description">
       {% markdown %}
         {{- card.desc | safe }}
       {% endmarkdown %}
-      </span>
+      </div>
       <div class="entry-photos">
         {% for thing in card.attachments %}
           <img src="{{ thing.url }}" >
@@ -28,6 +41,8 @@
       </div>
     </section>
     {% endfor %}
+    </div>
+    </article>
   </main>
 </body>
 </html>
