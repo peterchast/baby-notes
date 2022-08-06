@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
   <link rel="icon" href="https://emojicdn.elk.sh/👶" />
   <title>ZJR | Welcome to the world!</title>
   {% set css %}
@@ -18,26 +19,37 @@
 </head>
 <body>
   <main>
+    <article class="title-screen">
+      <img class='top-left-bg' src="static/img/top-left-sand.svg" />
+      <img class='top-right-bg' src="static/img/top-right-sand.svg" />
+      <img class='bottom-left-bg' src="static/img/lapping-ocean.svg" />
+      <img class='top-left' src="static/img/fan-leaf.svg" />
+      <img class='top-right' src="static/img/droopy-leaf.svg" />
+      <img class='bottom-left' src="static/img/monstera-leaf.svg" />
+      <div class="wrapper">
+          <div class="title-frame">
+            <div class="title-box"></div>
+          </div>
+    </article>
     <article class="baby-age">
       <div class="wrapper">
           <div id="counter"></div>
-            <p>...since Zora Jack Rivard was born.</p>
+          <p>...since Zora Jack Rivard was born.</p>
         </div>
     </article>
     <article class="baby-diary">
     <div class="wrapper">
+      <h2 class="fancy-bold">A Brief Record of The Early Times</h2>
     {% for card in trello %}
     <section class="diary-entry">
     <div class="entry-text">
-    <span class="entry-date">{{ card.due | postDate }}</span> 
+    <span class="entry-date">{{ card.due | postDate }}</span>
       {% markdown %}
-        {{- card.desc | safe }}
+        {{- card.desc | safe | replace("Multimedia Message ", "") }}
       {% endmarkdown %}
       </div>
       <div class="entry-photos">
-        {% for thing in card.attachments %}
-          <img src="{{ thing.url }}" >
-        {% endfor %}
+    
       </div>
     </section>
     {% endfor %}

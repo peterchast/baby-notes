@@ -38,17 +38,12 @@ body {
   color: var(--night);
   line-height: 1.5;
   background-color: var(--salt);
-}
-
-header,
-main,
-footer {
-  max-width: 600px;
-  margin: 0 auto;
+  overflow-x: hidden;
 }
 
 article {
   min-height: 100vh;
+  //margin: 4rem 0;
   padding: 0 20px;
 }
 
@@ -73,7 +68,51 @@ h1, h2, h3 {
   padding: 1rem 0;
 }
 
+.fancy-bold {
+    font-family: 'Means Web', sans-serif;
+    font-weight: 500;
+}
+
+.title-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  //background-image: url("https://static.vecteezy.com/system/resources/previews/002/467/304/non_2x/natural-background-with-tropical-palm-and-monstera-leaves-free-vector.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.title-frame {
+  width: 18vh;
+  height: 60vh;
+  border: 10px solid var(--night);
+  padding: 2rem;
+}
+
+.title-box {
+  width: 100%;
+  height: 100%;
+  background-image: url("static/img/zjr-vert.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.baby-diary {
+}
+
+.baby-diary .wrapper {
+  padding: 0 20px;
+}
+
+.baby-diary .wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 .diary-entry {
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -102,11 +141,26 @@ h1, h2, h3 {
   object-fit: cover;
 }
 
+.baby-age {
+}
+
+.baby-age p {
+  margin: 0;
+}
+
 #counter .years, #counter .months, #counter .days  {
   font-family: 'Means Web', sans-serif;
   font-weight: 500;
   display: inline;
   font-size: 2em;
+}
+
+.big-numba {
+  font-size: 1.5em;
+  //text-shadow: 0 3px 0 var(--night);
+  //-webkit-text-stroke: 2px var(--night);
+  //color: var(--salt);
+  line-height: 0.8;
 }
 
 #counter .hours, #counter .minutes, #counter .seconds {
@@ -116,7 +170,11 @@ h1, h2, h3 {
   font-size: 1.5em;
 }
 
-#counter span + span {
+#counter .months, #counter .days  {
+  margin-left: 20px;
+}
+
+#counter .minutes, #counter .seconds {
   margin-left: 10px;
 }
 
@@ -126,4 +184,103 @@ h1, h2, h3 {
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+.top-left {
+  position: absolute;
+  width: 60vw;
+  top: -7vw;
+  left: -15vw;
+  //z-index: 1;
+}
+
+.top-right {
+  position: absolute;
+  width: 50vw;
+  top: -10vw;
+  right: -15vw;
+}
+
+.bottom-left {
+  position: absolute;
+  width: 50vw;
+  bottom: -10vw;
+  left: -10vw;
+}
+
+.top-left-bg {
+  position: absolute;
+  width: 40vw;
+  top: 0;
+  left: 0;
+}
+
+.top-right-bg {
+  position: absolute;
+  width: 40vw;
+  top: 0;
+  right: 0;
+}
+
+.bottom-left-bg {
+  position: absolute;
+  min-width: 100vw;
+  max-height: 45vh;
+  bottom: 0;
+  left: 0;
+}
+
+@media (min-width: 100vh) {
+  .title-frame {
+    width: 40vw;
+    height: 12vw;
+  }
+  
+  .title-box {
+    background-image: url("static/img/zjr-horiz.svg");
+  }
+
+  .top-left {
+    position: absolute;
+    width: 35vw;
+    top: -7vw;
+    left: -10vw;
+  }
+  
+  .top-right {
+    position: absolute;
+    width: 30vw;
+    top: -10vw;
+    right: -8vw;
+  }
+  
+  .bottom-left {
+    position: absolute;
+    width: 35vw;
+    bottom: -10vw;
+    left: -9vw;
+  }
+
+  .top-left-bg {
+    position: absolute;
+    width: 20vw;
+    top: 0;
+    left: 0;
+  }
+  
+  .top-right-bg {
+    position: absolute;
+    width: 30vw;
+    top: 0;
+    right: 0;
+  }
+
+  .bottom-left-bg {
+    position: absolute;
+    min-width: 100vw;
+    max-height: 45vh;
+    bottom: 0;
+    left: 0;
+  }
+  
 }

@@ -61,9 +61,9 @@ CountUp.prototype.updateCounter=function(){
     this.calculate();
     this.formatTime();
   this.countainer.innerHTML = 
-      "<span class='years'>" + this.years + " " + (this.years == 1? "year" : "years") + "</span>" +
-      "<span class='months'>" + this.months + " " + (this.months == 1? "month" : "months") + "</span>" + 
-      "<span class='days'>" + this.days + " " + (this.days == 1? "day" : "days") + "</span>" + "<br>" +
+      "<span class='years'>" + "<span class='big-numba'>" + this.years +  "</span>" + " " + (this.years == 1? "year" : "years") + "</span>" +
+      "<span class='months'>" + "<span class='big-numba'>" + this.months + "</span>" + " " + (this.months == 1? "month" : "months") + "</span>" + 
+      "<span class='days'>" + "<span class='big-numba'>" + this.days + "</span>" + " " + (this.days == 1? "day" : "days") + "</span>" + "<br>" +
       "<span class='hours'>"  + "(" + this.hours + " " + (this.hours == 1? "hour" : "hours") + "</span>" + 
       "<span class='minutes'>" + this.minutes + " " + (this.minutes == 1? "minute" : "minutes") + "</span>" + 
       "<span class='seconds'>" + this.seconds + " " + (this.seconds == 1? "second" : "seconds") + ")" + "</span>" ;
